@@ -1,0 +1,98 @@
+.b2{
+    background-color: #F7B5CA;
+}
+
+.head {
+    position: fixed;
+    bottom: 400px;
+    left: 650px;
+    right: 0;
+    width: 120px;
+    
+  }
+
+.h1 {
+    color: #304463;
+    white-space: nowrap;
+
+  }
+
+.h2 {
+    color: #D91656;
+    white-space: nowrap;
+    position: fixed;
+    right: 410px;
+    margin-top: 0;
+    
+}
+
+.cat {
+    width: 200px;
+    height: 200px;
+}
+
+.ask {
+    position: fixed;
+    padding-top: 40px;
+    
+}
+
+.no {
+    position: fixed;
+    bottom: 240px;
+    right: 680px;
+    border: #D91656;
+    font-size: 40px;
+    background-color: #FF748B;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+.yes {
+    position: fixed;
+    bottom: 240px;
+    right: 790px;
+    font-size: 40px;
+    background-color: #FF748B;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+.b1 {
+    background-image: url("images/heart.jpg");
+}
+
+.thingy {
+    width: 200px;
+    height: 200px;
+}
+
+.n1 {
+    color: #7b16d9;
+    position: fixed;
+    right: 330px;
+    margin-top: 80px;
+    text-align: center;
+    font-size: 80px;
+
+}
+
+.n2 {
+    color: #304463;
+    white-space: nowrap;
+    text-align: center;
+    position: fixed;
+    padding: auto;
+    right: 620px;
+}
+
+.m1 {
+    color: #304463;
+    white-space: nowrap;
+    position: fixed;
+    right: 642px;
+    bottom: 320px ;
+    font-size:40px;
+}
