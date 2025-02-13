@@ -201,7 +201,7 @@
 
 
     }
-    @media (height >= 700px <1000px) {
+    @media (height >= 700px ) {
 
         top : 420px;
     }
