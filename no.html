@@ -7,14 +7,50 @@
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
 <body class="b2">
-    <div  class="head">
+    <div class="head">
         <img class="thingy" src="images/thingy.jpg" alt="cat">
         <h1 class="m1">YOU SURE?</h1>
-        <!-- <h1 class="h2">WILL YOU BE MY FOREVER VALA LOVE?</h1> -->
         <div class="ask">
-            <h2 class="yes">yes</h2> 
-            <a href="index.html"><h2 class="no">no</h2></a>
+            <div class="yes" id="yesBtn">yes</div> 
+            <a href="index.html"><div class="no">no</div></a>
         </div>
     </div>
 </body>
+<script>
+  const yesBtn = document.getElementById('yesBtn');
+  yesBtn.addEventListener('click', function() {
+    const m1 = document.querySelector('.m1');
+    const ask = document.querySelector('.ask');
+    const origImg = document.querySelector('.thingy');
+    const m1Rect = m1.getBoundingClientRect();
+    const askRect = ask.getBoundingClientRect();
+    const origImgRect = origImg.getBoundingClientRect();
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const imgWidth = Math.max(vw * 0.22, 40); // 22vw, min 40px
+    const imgHeight = imgWidth; // square for simplicity
+    for (let i = 0; i < 3; i++) {
+      let left, top, tries = 0;
+      do {
+        left = Math.random() * (vw - imgWidth);
+        top = Math.random() * (vh - imgHeight);
+        const imgRect = {left, top, right: left + imgWidth, bottom: top + imgHeight};
+        const overlaps = (
+          !(imgRect.right < m1Rect.left || imgRect.left > m1Rect.right || imgRect.bottom < m1Rect.top || imgRect.top > m1Rect.bottom) ||
+          !(imgRect.right < askRect.left || imgRect.left > askRect.right || imgRect.bottom < askRect.top || imgRect.top > askRect.bottom) ||
+          !(imgRect.right < origImgRect.left || imgRect.left > origImgRect.right || imgRect.bottom < origImgRect.top || imgRect.top > origImgRect.bottom)
+        );
+        tries++;
+        if (!overlaps || tries > 20) break;
+      } while (true);
+      const img = document.createElement('img');
+      img.src = 'images/thingy.jpg';
+      img.alt = 'cat';
+      img.className = 'thingy-random';
+      img.style.left = left + 'px';
+      img.style.top = top + 'px';
+      document.body.appendChild(img);
+    }
+  });
+</script>
 </html>
